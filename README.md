@@ -56,7 +56,7 @@ GlobalBooks Inc. is struggling with a big, old-fashioned system that is hard to 
       * Address validation
     - Integration: Real-time shipping updates
   
-   ### 📌Integration Architecture
+###  📌Integration Architecture
 
 1. **Message Broker (RabbitMQ)**
    - Enterprise Service Bus (ESB) implementation
@@ -138,7 +138,7 @@ GlobalBooks Inc. is struggling with a big, old-fashioned system that is hard to 
    - Architecture Diagrams: `01-design-artifacts/architecture-diagrams/`
    - Integration Guide: `11-documentation/integration-guide.md`
 
-  ## Service Endpoints
+  ## ⏺️Service Endpoints
 
 ### Orders Service (REST API)
 
@@ -181,7 +181,7 @@ Operations:
 - `getBookPrice` - Get book price
 - `checkAvailability` - Check book availability
 
-## Message Flow
+## 📩Message Flow
 
 1. **Order Creation**: Client places order via Orders Service REST API
 2. **Event Publishing**: Orders Service publishes events to RabbitMQ
@@ -189,7 +189,7 @@ Operations:
 4. **Shipping Processing**: Shipping Service consumes shipping events
 5. **Orchestration**: BPEL process coordinates the entire workflow
 
-## Security
+## 🔐Security
 
 ### Current Implementation
 - **SOAP Services**: Basic authentication (WS-Security can be added later)
@@ -201,7 +201,7 @@ Operations:
 - Complete OAuth2 implementation for REST services
 - Mutual TLS authentication between services
 
-## Testing
+## ❓Testing
 
 ### Postman Collections
 - `09-testing/postman/GlobalBooks-SOA-Catalog.postman_collection.json`
@@ -210,7 +210,7 @@ Operations:
 ### SOAP UI Tests
 - `09-testing/soap-ui/CatalogService-TestSuite.xml`
 
-## Development
+## 🔀Development
 
 ### Setting Up Development Environment
 
@@ -312,13 +312,13 @@ mvn clean package
      mvn javadoc:javadoc
      ```
 
-## Monitoring
+## 📈Monitoring
 
 - Health checks available on all services
 - RabbitMQ management interface for message monitoring
 - Spring Boot Actuator endpoints for metrics
 
-## Deployment
+## 🔄Deployment
 
 ### Docker Deployment
 ```bash
@@ -329,7 +329,7 @@ docker compose up -d --build
 ### Kubernetes Deployment
 Kubernetes manifests available in `10-deployment/kubernetes/`
 
-## Architecture Patterns Demonstrated
+## 🧮Architecture Patterns Demonstrated
 
 - **Service-Oriented Architecture (SOA)**
 - **Enterprise Service Bus (ESB)**
@@ -339,7 +339,7 @@ Kubernetes manifests available in `10-deployment/kubernetes/`
 - **Circuit Breaker Pattern**
 - **Saga Pattern** (via BPEL orchestration)
 
-## Technologies Used
+## 🛠️Technologies Used
 
 - **Java 17** - Primary programming language
 - **Spring Boot** - Application framework
@@ -351,5 +351,5 @@ Kubernetes manifests available in `10-deployment/kubernetes/`
 - **BPEL** - Business process orchestration
 - **H2 Database** - In-memory database for development
 
-## Project Structure
+## ✏️Project Structure
 
