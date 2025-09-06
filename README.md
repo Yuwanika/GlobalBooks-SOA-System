@@ -76,7 +76,7 @@ GlobalBooks Inc. is struggling with a big, old-fashioned system that is hard to 
    - JWT token management
    - Role-based access control (RBAC)
 
-## 📌System Requirements
+## 🖥️System Requirements
 
 ### Development Environment
 - Java Development Kit (JDK) 17 or higher
@@ -96,7 +96,7 @@ GlobalBooks Inc. is struggling with a big, old-fashioned system that is hard to 
 - Load Balancer support
 - Persistent Volume support
 
-## 📌Quick Start Guide
+## ♨️Quick Start Guide
 
 1. **Clone and Setup**
    ```bash
