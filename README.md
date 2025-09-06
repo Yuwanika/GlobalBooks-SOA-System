@@ -11,3 +11,47 @@ GlobalBooks Inc. is struggling with a big, old-fashioned system that is hard to 
 - **Monitoring**: Built-in health checks and metrics collection
 - **Documentation**: Complete API documentation and architectural diagrams
 - **Testing**: Comprehensive test suites for all services 
+
+## 🖇️Architecture Overview
+
+### 📌Core Services Architecture
+
+1. **Catalog Service (SOAP)** - Port 8081
+   - Technology: Java Spring Boot with JAX-WS
+   - Protocol: SOAP with WS-Security
+   - Features:
+     * Comprehensive book catalog management
+     * Real-time pricing and availability checks
+     * Category and search functionality
+     * Inventory synchronization
+   - Integration: Exposes WSDL for service discovery
+
+2. **Orders Service (REST)** - Port 8088
+    - Technology: Java Spring Boot
+    - Protocol: REST with OAuth2
+    - Features:
+      * Order lifecycle management
+      * Order tracking and history
+      * Business process orchestration
+      * Event-driven updates
+    - Integration: Publishes events to RabbitMQ
+
+3. **Payments Service (REST)** - Port 8083
+    - Technology: Java Spring Boot
+    - Protocol: REST microservice
+    - Features:
+      * Secure payment processing
+      * Multiple payment method support
+      * Transaction history
+      * Refund processing
+    - Security: PCI-DSS compliance ready
+
+4. **Shipping Service (REST)** - Port 8084
+    - Technology: Java Spring Boot
+    - Protocol: REST microservice
+    - Features:
+      * Shipment tracking
+      * Delivery estimation
+      * Multi-carrier support
+      * Address validation
+    - Integration: Real-time shipping updates
