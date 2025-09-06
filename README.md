@@ -55,3 +55,87 @@ GlobalBooks Inc. is struggling with a big, old-fashioned system that is hard to 
       * Multi-carrier support
       * Address validation
     - Integration: Real-time shipping updates
+  
+   ### 📌Integration Architecture
+
+1. **Message Broker (RabbitMQ)**
+   - Enterprise Service Bus (ESB) implementation
+   - Asynchronous message patterns
+   - Dead letter queues for error handling
+   - Message persistence and reliability
+
+2. **Process Orchestration (BPEL)**
+   - Order fulfillment workflow orchestration
+   - Long-running transaction management
+   - Error compensation handling
+   - Business process monitoring
+
+3. **Security Framework**
+   - OAuth2 authentication for REST services
+   - WS-Security for SOAP services
+   - JWT token management
+   - Role-based access control (RBAC)
+
+## 📌System Requirements
+
+### Development Environment
+- Java Development Kit (JDK) 17 or higher
+- Maven 3.9.11
+- Docker Engine 20.10+
+- Docker Compose 2.0+
+- Git 2.0+
+- 8GB RAM minimum (16GB recommended)
+- 20GB free disk space
+
+### Production Environment
+- Kubernetes 1.20+ cluster
+- Node requirements:
+  * 16GB RAM minimum per node
+  * 4 CPU cores minimum per node
+  * 50GB storage per node
+- Load Balancer support
+- Persistent Volume support
+
+## 📌Quick Start Guide
+
+1. **Clone and Setup**
+   ```bash
+   # Clone the repository
+   git clone <repository-url>
+   cd SOA
+
+   # Setup environment variables
+   copy .env.example .env
+   # Edit .env with your configurations
+   ```
+
+2. **Build and Deploy**
+   ```bash
+   # Build all services
+   ./13-scripts/build-all-services.sh
+
+   # Deploy using Docker Compose
+   cd 10-deployment
+   docker compose up -d --build
+   ```
+
+3. **Verify System Health**
+   ```bash
+   # Run health check script
+   ./13-scripts/verify-deployment.sh
+   ```
+
+   Or check individual endpoints:
+   - Catalog Service: http://localhost:8081/soap/catalog?wsdl
+   - Orders API: http://localhost:8088/api/v1/orders/health
+   - Payments API: http://localhost:8083/api/v1/payments/health
+   - Shipping API: http://localhost:8084/api/v1/shippings/health
+   - RabbitMQ Dashboard: http://localhost:15672 
+     * Username: admin
+     * Password: password123
+
+4. **Access Documentation**
+   - API Documentation: http://localhost:8082/swagger-ui.html
+   - Architecture Diagrams: `01-design-artifacts/architecture-diagrams/`
+   - Integration Guide: `11-documentation/integration-guide.md`
+
