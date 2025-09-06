@@ -131,8 +131,7 @@ GlobalBooks Inc. is struggling with a big, old-fashioned system that is hard to 
    - Payments API: http://localhost:8083/api/v1/payments/health
    - Shipping API: http://localhost:8084/api/v1/shippings/health
    - RabbitMQ Dashboard: http://localhost:15672 
-     * Username: admin
-     * Password: password123
+     
 
 4. **Access Documentation**
    - API Documentation: http://localhost:8082/swagger-ui.html
