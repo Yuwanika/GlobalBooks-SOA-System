@@ -363,5 +363,5 @@ Kubernetes manifests available in `10-deployment/kubernetes/`
 
 ## 🔖Conclusion
 
-The GlobalBooks SOA System demonstrates a complete, enterprise-ready reference architecture for managing book ordering and related services. By combining SOAP and REST microservices, secured with OAuth2 and WS-Security, and integrating them through RabbitMQ and BPEL orchestration, it showcases real-world best practices in scalability, security, and process automation. With comprehensive documentation, testing, and deployment support for Docker and Kubernetes, this project serves as a practical guide for building robust, service-oriented, event-driven platforms in modern enterprise environments.
+The GlobalBooks SOA System demonstrates a complete, enterprise-ready reference architecture for managing book ordering and related services.By combining SOAP and REST microservices, secured with OAuth2 and WS Security, and integrating them through RabbitMQ and BPEL orchestration, it showcases real-world best practices in scalability, security, and process automation.With comprehensive documentation, testing, and deployment support for Docker and Kubernetes, this project serves as a practical guide for building robust, service-oriented, event-driven platforms in modern enterprise environments.
 
