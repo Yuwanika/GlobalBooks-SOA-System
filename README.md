@@ -138,3 +138,218 @@ GlobalBooks Inc. is struggling with a big, old-fashioned system that is hard to 
    - Architecture Diagrams: `01-design-artifacts/architecture-diagrams/`
    - Integration Guide: `11-documentation/integration-guide.md`
 
+  ## Service Endpoints
+
+### Orders Service (REST API)
+
+```
+POST   /api/v1/orders                    # Create new order
+GET    /api/v1/orders                    # Get all orders
+GET    /api/v1/orders/{id}               # Get order by ID
+PUT    /api/v1/orders/{id}/status        # Update order status
+DELETE /api/v1/orders/{id}               # Cancel order
+GET    /api/v1/orders/health             # Health check
+```
+
+### Payments Service (REST API)
+
+```
+POST   /api/v1/payments/initiate         # Initiate payment
+POST   /api/v1/payments/{id}/process     # Process payment
+GET    /api/v1/payments/{id}             # Get payment details
+GET    /api/v1/payments/order/{orderId}  # Get payments by order
+GET    /api/v1/payments/health           # Health check
+```
+
+### Shipping Service (REST API)
+
+```
+POST   /api/v1/shippings                 # Create shipping
+POST   /api/v1/shippings/{id}/process    # Process shipping
+GET    /api/v1/shippings/{id}            # Get shipping details
+GET    /api/v1/shippings/tracking/{num}  # Track shipment
+GET    /api/v1/shippings/health          # Health check
+```
+
+### Catalog Service (SOAP)
+
+WSDL available at: http://localhost:8081/soap/catalog?wsdl
+
+Operations:
+- `searchBooks` - Search books by query and category
+- `getBookById` - Get book details by ID
+- `getBookPrice` - Get book price
+- `checkAvailability` - Check book availability
+
+## Message Flow
+
+1. **Order Creation**: Client places order via Orders Service REST API
+2. **Event Publishing**: Orders Service publishes events to RabbitMQ
+3. **Payment Processing**: Payments Service consumes payment events
+4. **Shipping Processing**: Shipping Service consumes shipping events
+5. **Orchestration**: BPEL process coordinates the entire workflow
+
+## Security
+
+### Current Implementation
+- **SOAP Services**: Basic authentication (WS-Security can be added later)
+- **REST Services**: OAuth2 JWT token-based authentication (configuration provided)
+- **Keycloak**: Integrated for identity management (available in Docker setup)
+
+### Planned Security Features
+- WS-Security with UsernameToken authentication for SOAP services
+- Complete OAuth2 implementation for REST services
+- Mutual TLS authentication between services
+
+## Testing
+
+### Postman Collections
+- `09-testing/postman/GlobalBooks-SOA-Catalog.postman_collection.json`
+- `09-testing/postman/GlobalBooks_Orders_API.postman_collection.json`
+
+### SOAP UI Tests
+- `09-testing/soap-ui/CatalogService-TestSuite.xml`
+
+## Development
+
+### Setting Up Development Environment
+
+1. **Install Required Tools**
+   ```bash
+   # Verify Java 17+ installation
+   java -version
+   
+   # Verify Maven 3.9+
+   mvn -version
+   
+   # Verify Docker
+   docker --version
+   docker-compose --version
+   ```
+
+2. **Configure Environment**
+   ```bash
+   # Set up development environment
+   cd 13-scripts
+   ./setup-environment.sh
+   ```
+
+### Building Individual Services
+
+```bash
+# Catalog Service
+cd 02-catalog-service
+mvn clean package
+
+# Orders Service
+cd 03-orders-service
+mvn clean package
+
+# Payments Service
+cd 04-payments-service
+mvn clean package
+
+# Shipping Service
+cd 05-shipping-service
+mvn clean package
+```
+
+### Running Services Locally
+   ```bash
+   # Catalog Service (Port 8081)
+   cd 02-catalog-service
+   mvn spring-boot:run
+
+   # Orders Service (Port 8088)
+   cd 03-orders-service
+   mvn spring-boot:run
+
+   # Payments Service (Port 8083)
+   cd 04-payments-service
+   mvn spring-boot:run
+
+   # Shipping Service (Port 8084)
+   cd 05-shipping-service
+   mvn spring-boot:run
+   ```
+
+3. **Verify Services**
+   ```bash
+   # Check health endpoints
+   curl http://localhost:8081/soap/catalog?wsdl
+   curl http://localhost:8088/api/v1/orders/health
+   curl http://localhost:8083/api/v1/payments/health
+   curl http://localhost:8084/api/v1/shippings/health
+   ```
+
+### Development Best Practices
+
+1. **Code Quality**
+   - Run static code analysis:
+     ```bash
+     mvn sonar:sonar
+     ```
+   - Format code before commit:
+     ```bash
+     mvn formatter:format
+     ```
+
+2. **Testing**
+   - Run unit tests:
+     ```bash
+     mvn test
+     ```
+   - Run integration tests:
+     ```bash
+     mvn verify
+     ```
+   - Load test scripts available in `09-testing/performance/`
+
+3. **Documentation**
+   - Update API documentation in `11-documentation/api-docs/`
+   - Generate updated API docs:
+     ```bash
+     mvn javadoc:javadoc
+     ```
+
+## Monitoring
+
+- Health checks available on all services
+- RabbitMQ management interface for message monitoring
+- Spring Boot Actuator endpoints for metrics
+
+## Deployment
+
+### Docker Deployment
+```bash
+cd 10-deployment
+docker compose up -d --build
+```
+
+### Kubernetes Deployment
+Kubernetes manifests available in `10-deployment/kubernetes/`
+
+## Architecture Patterns Demonstrated
+
+- **Service-Oriented Architecture (SOA)**
+- **Enterprise Service Bus (ESB)**
+- **Event-Driven Architecture**
+- **Microservices**
+- **API Gateway Pattern**
+- **Circuit Breaker Pattern**
+- **Saga Pattern** (via BPEL orchestration)
+
+## Technologies Used
+
+- **Java 17** - Primary programming language
+- **Spring Boot** - Application framework
+- **Spring Web Services** - SOAP implementation
+- **RabbitMQ** - Message broker
+- **Docker** - Containerization
+- **OAuth2** - REST API security
+- **WS-Security** - SOAP security
+- **BPEL** - Business process orchestration
+- **H2 Database** - In-memory database for development
+
+## Project Structure
+
