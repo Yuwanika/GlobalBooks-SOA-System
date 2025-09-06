@@ -12,7 +12,7 @@ GlobalBooks Inc. is struggling with a big, old-fashioned system that is hard to 
 - **Documentation**: Complete API documentation and architectural diagrams
 - **Testing**: Comprehensive test suites for all services 
 
-## 📎Architecture Overview
+## 🪩Architecture Overview
 
 ### 📌Core Services Architecture
 
