@@ -353,6 +353,187 @@ Kubernetes manifests available in `10-deployment/kubernetes/`
 
 ## ✏️Project Structure
 
+
+├───task_01_design_artifacts
+├───task_02_catalog_service
+│   ├───src
+│   │   └───main
+│   │       ├───java
+│   │       │   └───com
+│   │       │       └───globalbooks
+│   │       │           ├───catalog
+│   │       │           └───security
+│   │       ├───resources
+│   │       │   ├───com
+│   │       │   │   └───globalbooks
+│   │       │   │       └───catalog
+│   │       │   ├───uddi
+│   │       │   └───wsdl
+│   │       └───webapp
+│   │           └───WEB-INF
+│   └───target
+│       ├───catalog-service-1.0.0
+│       │   ├───META-INF
+│       │   └───WEB-INF
+│       │       ├───classes
+│       │       │   ├───com
+│       │       │   │   └───globalbooks
+│       │       │   │       ├───catalog
+│       │       │   │       └───security
+│       │       │   ├───uddi
+│       │       │   └───wsdl
+│       │       └───lib
+│       ├───classes
+│       │   ├───com
+│       │   │   └───globalbooks
+│       │   │       ├───catalog
+│       │   │       └───security
+│       │   ├───uddi
+│       │   └───wsdl
+│       ├───generated-sources
+│       │   └───annotations
+│       ├───maven-archiver
+│       └───maven-status
+│           └───maven-compiler-plugin
+│               └───compile
+│                   └───default-compile
+├───task_03_orders_service
+│   ├───Sample
+│   ├───src
+│   │   └───main
+│   │       ├───java
+│   │       │   └───com
+│   │       │       └───globalbooks
+│   │       │           └───orders
+│   │       │               ├───config
+│   │       │               ├───controller
+│   │       │               ├───integration
+│   │       │               ├───model
+│   │       │               ├───repository
+│   │       │               └───service
+│   │       └───resources
+│   │           └───schemas
+│   └───target
+│       ├───classes
+│       │   ├───com
+│       │   │   └───globalbooks
+│       │   │       └───orders
+│       │   │           ├───config
+│       │   │           ├───controller
+│       │   │           ├───integration
+│       │   │           ├───model
+│       │   │           ├───repository
+│       │   │           └───service
+│       │   └───schemas
+│       ├───generated-sources
+│       │   └───annotations
+│       ├───maven-archiver
+│       └───maven-status
+│           └───maven-compiler-plugin
+│               └───compile
+│                   └───default-compile
+├───task_04_payments_service
+│   ├───src
+│   │   └───main
+│   │       ├───java
+│   │       │   └───com
+│   │       │       └───globalbooks
+│   │       │           └───payments
+│   │       │               ├───config
+│   │       │               ├───consumer
+│   │       │               ├───controller
+│   │       │               ├───model
+│   │       │               ├───repository
+│   │       │               └───service
+│   │       └───resources
+│   └───target
+│       ├───classes
+│       │   └───com
+│       │       └───globalbooks
+│       │           └───payments
+│       │               ├───config
+│       │               ├───consumer
+│       │               ├───controller
+│       │               ├───model
+│       │               ├───repository
+│       │               └───service
+│       ├───generated-sources
+│       │   └───annotations
+│       ├───maven-archiver
+│       └───maven-status
+│           └───maven-compiler-plugin
+│               └───compile
+│                   └───default-compile
+├───task_05_shipping_service
+│   ├───src
+│   │   └───main
+│   │       ├───java
+│   │       │   └───com
+│   │       │       └───globalbooks
+│   │       │           └───shipping
+│   │       │               ├───config
+│   │       │               ├───consumer
+│   │       │               ├───controller
+│   │       │               ├───model
+│   │       │               ├───repository
+│   │       │               └───service
+│   │       └───resources
+│   └───target
+│       ├───classes
+│       │   └───com
+│       │       └───globalbooks
+│       │           └───shipping
+│       │               ├───config
+│       │               ├───consumer
+│       │               ├───controller
+│       │               ├───model
+│       │               ├───repository
+│       │               └───service
+│       ├───generated-sources
+│       │   └───annotations
+│       ├───maven-archiver
+│       └───maven-status
+│           └───maven-compiler-plugin
+│               └───compile
+│                   └───default-compile
+├───task_06_bpel_orchestration
+│   └───processes
+├───task_06_camel_orchestration
+│   └───src
+│       ├───main
+│       │   ├───java
+│       │   │   └───com
+│       │   │       └───globalbooks
+│       │   │           └───orchestration
+│       │   └───resources
+│       │       └───wsdl
+│       └───test
+│           └───java
+│               └───com
+│                   └───globalbooks
+│                       └───orchestration
+├───task_06_simple_orchestration
+│   └───src
+│       └───main
+│           ├───java
+│           │   └───com
+│           │       └───globalbooks
+│           │           └───simpleorchestration
+│           └───resources
+├───task_07_integration
+│   └───producers
+├───task_08_security
+│   └───oauth2
+├───task_09_testing
+│   ├───postman
+│   └───soap-ui
+├───task_10_deployment
+│   ├───bpel-deployment
+│   └───scripts
+├───task_11_documentation
+│   └───api-docs
+└───task_13_scripts
+
 ## 🔃Contributing
 
 1. Fork the repository
