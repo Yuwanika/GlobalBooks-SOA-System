@@ -353,186 +353,68 @@ Kubernetes manifests available in `10-deployment/kubernetes/`
 
 ## ✏️Project Structure
 
-
-├───task_01_design_artifacts
-├───task_02_catalog_service
-│   ├───src
-│   │   └───main
-│   │       ├───java
-│   │       │   └───com
-│   │       │       └───globalbooks
-│   │       │           ├───catalog
-│   │       │           └───security
-│   │       ├───resources
-│   │       │   ├───com
-│   │       │   │   └───globalbooks
-│   │       │   │       └───catalog
-│   │       │   ├───uddi
-│   │       │   └───wsdl
-│   │       └───webapp
-│   │           └───WEB-INF
-│   └───target
-│       ├───catalog-service-1.0.0
-│       │   ├───META-INF
-│       │   └───WEB-INF
-│       │       ├───classes
-│       │       │   ├───com
-│       │       │   │   └───globalbooks
-│       │       │   │       ├───catalog
-│       │       │   │       └───security
-│       │       │   ├───uddi
-│       │       │   └───wsdl
-│       │       └───lib
-│       ├───classes
-│       │   ├───com
-│       │   │   └───globalbooks
-│       │   │       ├───catalog
-│       │   │       └───security
-│       │   ├───uddi
-│       │   └───wsdl
-│       ├───generated-sources
-│       │   └───annotations
-│       ├───maven-archiver
-│       └───maven-status
-│           └───maven-compiler-plugin
-│               └───compile
-│                   └───default-compile
-├───task_03_orders_service
-│   ├───Sample
-│   ├───src
-│   │   └───main
-│   │       ├───java
-│   │       │   └───com
-│   │       │       └───globalbooks
-│   │       │           └───orders
-│   │       │               ├───config
-│   │       │               ├───controller
-│   │       │               ├───integration
-│   │       │               ├───model
-│   │       │               ├───repository
-│   │       │               └───service
-│   │       └───resources
-│   │           └───schemas
-│   └───target
-│       ├───classes
-│       │   ├───com
-│       │   │   └───globalbooks
-│       │   │       └───orders
-│       │   │           ├───config
-│       │   │           ├───controller
-│       │   │           ├───integration
-│       │   │           ├───model
-│       │   │           ├───repository
-│       │   │           └───service
-│       │   └───schemas
-│       ├───generated-sources
-│       │   └───annotations
-│       ├───maven-archiver
-│       └───maven-status
-│           └───maven-compiler-plugin
-│               └───compile
-│                   └───default-compile
-├───task_04_payments_service
-│   ├───src
-│   │   └───main
-│   │       ├───java
-│   │       │   └───com
-│   │       │       └───globalbooks
-│   │       │           └───payments
-│   │       │               ├───config
-│   │       │               ├───consumer
-│   │       │               ├───controller
-│   │       │               ├───model
-│   │       │               ├───repository
-│   │       │               └───service
-│   │       └───resources
-│   └───target
-│       ├───classes
-│       │   └───com
-│       │       └───globalbooks
-│       │           └───payments
-│       │               ├───config
-│       │               ├───consumer
-│       │               ├───controller
-│       │               ├───model
-│       │               ├───repository
-│       │               └───service
-│       ├───generated-sources
-│       │   └───annotations
-│       ├───maven-archiver
-│       └───maven-status
-│           └───maven-compiler-plugin
-│               └───compile
-│                   └───default-compile
-├───task_05_shipping_service
-│   ├───src
-│   │   └───main
-│   │       ├───java
-│   │       │   └───com
-│   │       │       └───globalbooks
-│   │       │           └───shipping
-│   │       │               ├───config
-│   │       │               ├───consumer
-│   │       │               ├───controller
-│   │       │               ├───model
-│   │       │               ├───repository
-│   │       │               └───service
-│   │       └───resources
-│   └───target
-│       ├───classes
-│       │   └───com
-│       │       └───globalbooks
-│       │           └───shipping
-│       │               ├───config
-│       │               ├───consumer
-│       │               ├───controller
-│       │               ├───model
-│       │               ├───repository
-│       │               └───service
-│       ├───generated-sources
-│       │   └───annotations
-│       ├───maven-archiver
-│       └───maven-status
-│           └───maven-compiler-plugin
-│               └───compile
-│                   └───default-compile
-├───task_06_bpel_orchestration
-│   └───processes
-├───task_06_camel_orchestration
-│   └───src
-│       ├───main
-│       │   ├───java
-│       │   │   └───com
-│       │   │       └───globalbooks
-│       │   │           └───orchestration
-│       │   └───resources
-│       │       └───wsdl
-│       └───test
-│           └───java
-│               └───com
-│                   └───globalbooks
-│                       └───orchestration
-├───task_06_simple_orchestration
-│   └───src
-│       └───main
-│           ├───java
-│           │   └───com
-│           │       └───globalbooks
-│           │           └───simpleorchestration
-│           └───resources
-├───task_07_integration
-│   └───producers
-├───task_08_security
-│   └───oauth2
-├───task_09_testing
-│   ├───postman
-│   └───soap-ui
-├───task_10_deployment
-│   ├───bpel-deployment
-│   └───scripts
-├───task_11_documentation
-│   └───api-docs
-└───task_13_scripts
+├── 01-design-artifacts/          # Architecture and Design Documentation
+│   ├── architecture-diagrams/    # System architecture visuals
+│   ├── governance-policy.md      # SOA governance guidelines
+│   └── soa-design-document.md    # Detailed design specifications
+│
+├── 02-catalog-service/           # SOAP-based Catalog Service
+│   ├── src/                      # Service source code
+│   ├── Dockerfile               # Container configuration
+│   └── pom.xml                  # Maven configuration
+│
+├── 03-orders-service/           # REST-based Orders Service
+│   ├── src/                     # Service implementation
+│   ├── Dockerfile              # Container configuration
+│   └── pom.xml                 # Maven build config
+│
+├── 04-payments-service/         # Payment Processing Service
+│   ├── src/                    # Service implementation
+│   ├── Dockerfile             # Container configuration
+│   └── pom.xml                # Maven build config
+│
+├── 05-shipping-service/        # Shipping Management Service
+│   ├── src/                   # Service implementation
+│   ├── Dockerfile            # Container configuration
+│   └── pom.xml               # Maven build config
+│
+├── 06-bpel-orchestration/     # Business Process Orchestration
+│   ├── deployment/           # BPEL deployment configs
+│   ├── processes/           # BPEL process definitions
+│   └── wsdl/               # Service WSDL files
+│
+├── 07-integration/          # Integration Components
+│   ├── consumers/          # Message consumers
+│   ├── producers/          # Event producers
+│   └── rabbitmq/          # Message broker configs
+│
+├── 08-security/           # Security Configurations
+│   ├── certificates/      # SSL/TLS certificates
+│   ├── oauth2/           # OAuth2 configurations
+│   └── ws-security/      # WS-Security settings
+│
+├── 09-testing/           # Testing Resources
+│   ├── integration-tests/# Integration test suites
+│   ├── performance/      # Performance test scripts
+│   ├── postman/         # API test collections
+│   └── soap-ui/         # SOAP service tests
+│
+├── 10-deployment/        # Deployment Configurations
+│   ├── docker-compose.yml # Local deployment
+│   ├── kubernetes/      # K8s manifests
+│   ├── cloud/          # Cloud-specific configs
+│   └── scripts/        # Deployment automation
+│
+├── 11-documentation/    # System Documentation
+│   └── api-docs/       # API specifications
+│
+├── 12-reports/         # Project Reports
+│   └── viva-presentation/ # Project presentations
+│
+└── 13-scripts/         # Utility Scripts
+    ├── setup-environment.sh # Environment setup
+    └── test-soa-workflow.sh # Workflow testing
+```
 
 ## 🔃Contributing
 
