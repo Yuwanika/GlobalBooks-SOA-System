@@ -467,6 +467,7 @@ Kubernetes manifests available in `10-deployment/kubernetes/`
 
 </details>
 
+```plaintext
 ├── 01-design-artifacts/          # Architecture and Design Documentation
 │   ├── architecture-diagrams/    # System architecture visuals
 │   ├── governance-policy.md      # SOA governance guidelines
@@ -504,13 +505,13 @@ Kubernetes manifests available in `10-deployment/kubernetes/`
 │
 ├── 08-security/                  # Security Configurations
 │   ├── certificates/             # SSL/TLS certificates
-│   ├── oauth2/                    # OAuth2 configurations
+│   ├── oauth2/                   # OAuth2 configurations
 │   └── ws-security/              # WS-Security settings
 │
 ├── 09-testing/                   # Testing Resources
 │   ├── integration-tests/        # Integration test suites
 │   ├── performance/              # Performance test scripts
-│   ├── postman/                   # API test collections
+│   ├── postman/                  # API test collections
 │   └── soap-ui/                  # SOAP service tests
 │
 ├── 10-deployment/                # Deployment Configurations
@@ -528,6 +529,7 @@ Kubernetes manifests available in `10-deployment/kubernetes/`
 └── 13-scripts/                   # Utility Scripts
     ├── setup-environment.sh      # Environment setup
     └── test-soa-workflow.sh      # Workflow testing
+
 
 
 
