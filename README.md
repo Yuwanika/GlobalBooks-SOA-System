@@ -416,15 +416,6 @@ Kubernetes manifests available in `10-deployment/kubernetes/`
     └── test-soa-workflow.sh # Workflow testing
 ```
 
-## 🔃Contributing
+Each directory contains a dedicated README with specific setup instructions and additional details.
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
-
-## 🔖Conclusion
-
-The GlobalBooks SOA System demonstrates a complete, enterprise-ready reference architecture for managing book ordering and related services.By combining SOAP and REST microservices, secured with OAuth2 and WS Security, and integrating them through RabbitMQ and BPEL orchestration, it showcases real-world best practices in scalability, security, and process automation.With comprehensive documentation, testing, and deployment support for Docker and Kubernetes, this project serves as a practical guide for building robust, service-oriented, event-driven platforms in modern enterprise environments.
 
