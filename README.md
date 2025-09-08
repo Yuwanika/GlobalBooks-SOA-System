@@ -353,8 +353,6 @@ Kubernetes manifests available in `10-deployment/kubernetes/`
 
 ## ✏️Project Structure
 
-# Project Structure
-
 <details>
 <summary>01-design-artifacts/ – Architecture and Design Documentation</summary>
 
@@ -469,7 +467,67 @@ Kubernetes manifests available in `10-deployment/kubernetes/`
 
 </details>
 
+├── 01-design-artifacts/          # Architecture and Design Documentation
+│   ├── architecture-diagrams/    # System architecture visuals
+│   ├── governance-policy.md      # SOA governance guidelines
+│   └── soa-design-document.md    # Detailed design specifications
+│
+├── 02-catalog-service/           # SOAP-based Catalog Service
+│   ├── src/                      # Service source code
+│   ├── Dockerfile                # Container configuration
+│   └── pom.xml                   # Maven configuration
+│
+├── 03-orders-service/            # REST-based Orders Service
+│   ├── src/                      # Service implementation
+│   ├── Dockerfile                # Container configuration
+│   └── pom.xml                   # Maven build config
+│
+├── 04-payments-service/          # Payment Processing Service
+│   ├── src/                      # Service implementation
+│   ├── Dockerfile                # Container configuration
+│   └── pom.xml                   # Maven build config
+│
+├── 05-shipping-service/          # Shipping Management Service
+│   ├── src/                      # Service implementation
+│   ├── Dockerfile                # Container configuration
+│   └── pom.xml                   # Maven build config
+│
+├── 06-bpel-orchestration/        # Business Process Orchestration
+│   ├── deployment/               # BPEL deployment configs
+│   ├── processes/                # BPEL process definitions
+│   └── wsdl/                     # Service WSDL files
+│
+├── 07-integration/               # Integration Components
+│   ├── consumers/                # Message consumers
+│   ├── producers/                # Event producers
+│   └── rabbitmq/                 # Message broker configs
+│
+├── 08-security/                  # Security Configurations
+│   ├── certificates/             # SSL/TLS certificates
+│   ├── oauth2/                    # OAuth2 configurations
+│   └── ws-security/              # WS-Security settings
+│
+├── 09-testing/                   # Testing Resources
+│   ├── integration-tests/        # Integration test suites
+│   ├── performance/              # Performance test scripts
+│   ├── postman/                   # API test collections
+│   └── soap-ui/                  # SOAP service tests
+│
+├── 10-deployment/                # Deployment Configurations
+│   ├── docker-compose.yml        # Local deployment
+│   ├── kubernetes/               # K8s manifests
+│   ├── cloud/                    # Cloud-specific configs
+│   └── scripts/                  # Deployment automation
+│
+├── 11-documentation/             # System Documentation
+│   └── api-docs/                 # API specifications
+│
+├── 12-reports/                   # Project Reports
+│   └── viva-presentation/        # Project presentations
+│
+└── 13-scripts/                   # Utility Scripts
+    ├── setup-environment.sh      # Environment setup
+    └── test-soa-workflow.sh      # Workflow testing
 
-Each directory contains a dedicated README with specific setup instructions and additional details.
 
 
